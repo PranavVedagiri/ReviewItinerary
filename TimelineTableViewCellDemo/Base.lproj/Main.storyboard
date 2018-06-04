@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Qyj-xt-f8p">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Timline-->
+        <scene sceneID="rED-Eo-Mfx">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OaM-Ba-qa8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tableViewController id="fwg-CG-Mqn" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" title="Timline" id="FLK-Fv-U64"/>
+                </tableViewController>
+            </objects>
+            <point key="canvasLocation" x="1390" y="-246"/>
+        </scene>
+        <!--Timeline Table View Controller-->
+        <scene sceneID="fu3-Bz-xN2">
+            <objects>
+                <viewController id="DNQ-Fn-PXw" customClass="TimelineTableViewController" customModule="TimelineTableViewCellDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="2B8-T2-4U4"/>
+                        <viewControllerLayoutGuide type="bottom" id="6OK-1C-hYZ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ajT-RT-u4L">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="NFL-LJ-XZu">
+                                <rect key="frame" x="0.0" y="294" width="375" height="312"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="sectionIndexBackgroundColor" red="0.90487922799999998" green="0.91383842829999995" blue="0.91383842829999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="ajT-RT-u4L" id="tgm-Rh-wfd"/>
+                                    <outlet property="delegate" destination="ajT-RT-u4L" id="whN-LB-oGA"/>
+                                </connections>
+                            </tableView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bar.png" translatesAutoresizingMaskIntoConstraints="NO" id="ogX-vc-IbZ">
+                                <rect key="frame" x="0.0" y="239" width="375" height="54"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="seattle.png" translatesAutoresizingMaskIntoConstraints="NO" id="Ftv-sq-vZH">
+                                <rect key="frame" x="0.0" y="64" width="375" height="175"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="blM-WO-JPy">
+                                <rect key="frame" x="98" y="614" width="179" height="45"/>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Confirm Itinerary">
+                                    <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Start Time: 10:30 a.m." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aZi-yQ-hVW">
+                                <rect key="frame" x="19" y="250" width="169" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Starting Point: University of Washington Seattle, WA" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JrF-a9-mYR">
+                                <rect key="frame" x="19" y="273" width="274" height="14"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                <color key="textColor" red="0.75406885150000003" green="0.75408679249999999" blue="0.75407713649999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.90487922799999998" green="0.91383842829999995" blue="0.91383842829999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="6OK-1C-hYZ" firstAttribute="top" secondItem="blM-WO-JPy" secondAttribute="bottom" constant="8" id="3a6-wR-HRm"/>
+                            <constraint firstAttribute="trailing" secondItem="NFL-LJ-XZu" secondAttribute="trailing" id="554-r1-YM1"/>
+                            <constraint firstItem="6OK-1C-hYZ" firstAttribute="top" secondItem="NFL-LJ-XZu" secondAttribute="bottom" constant="61" id="Da3-F3-JmR"/>
+                            <constraint firstAttribute="trailing" secondItem="blM-WO-JPy" secondAttribute="trailing" constant="98" id="HYP-tc-JlX"/>
+                            <constraint firstItem="NFL-LJ-XZu" firstAttribute="leading" secondItem="ajT-RT-u4L" secondAttribute="leading" id="LrV-MY-7oV"/>
+                            <constraint firstItem="blM-WO-JPy" firstAttribute="leading" secondItem="ajT-RT-u4L" secondAttribute="leading" constant="98" id="PSC-ga-htA"/>
+                            <constraint firstItem="ogX-vc-IbZ" firstAttribute="leading" secondItem="aZi-yQ-hVW" secondAttribute="trailing" constant="-188" id="XA6-zc-o8U"/>
+                            <constraint firstItem="blM-WO-JPy" firstAttribute="top" secondItem="NFL-LJ-XZu" secondAttribute="bottom" constant="8" id="YQ1-Vf-G8a"/>
+                            <constraint firstItem="NFL-LJ-XZu" firstAttribute="top" secondItem="ogX-vc-IbZ" secondAttribute="bottom" constant="1" id="YmO-Gg-IXg"/>
+                            <constraint firstItem="Ftv-sq-vZH" firstAttribute="top" secondItem="2B8-T2-4U4" secondAttribute="bottom" id="cGc-yL-c9t"/>
+                            <constraint firstItem="aZi-yQ-hVW" firstAttribute="top" secondItem="ogX-vc-IbZ" secondAttribute="bottom" constant="-43" id="gPj-nZ-f02"/>
+                            <constraint firstAttribute="trailing" secondItem="Ftv-sq-vZH" secondAttribute="trailing" id="hIp-OL-fJX"/>
+                            <constraint firstItem="ogX-vc-IbZ" firstAttribute="leading" secondItem="ajT-RT-u4L" secondAttribute="leading" id="jbR-dH-HFS"/>
+                            <constraint firstItem="ogX-vc-IbZ" firstAttribute="top" secondItem="2B8-T2-4U4" secondAttribute="bottom" constant="175" id="oO9-pR-8ZM"/>
+                            <constraint firstAttribute="trailing" secondItem="ogX-vc-IbZ" secondAttribute="trailing" id="rHg-Br-D4Y"/>
+                            <constraint firstItem="NFL-LJ-XZu" firstAttribute="top" secondItem="2B8-T2-4U4" secondAttribute="bottom" constant="230" id="rss-7Q-p8X"/>
+                            <constraint firstItem="Ftv-sq-vZH" firstAttribute="leading" secondItem="ajT-RT-u4L" secondAttribute="leading" id="x0c-gt-wxE"/>
+                            <constraint firstItem="ogX-vc-IbZ" firstAttribute="leading" secondItem="aZi-yQ-hVW" secondAttribute="trailing" constant="-188" id="y2J-ty-pIb"/>
+                            <constraint firstItem="ogX-vc-IbZ" firstAttribute="top" secondItem="Ftv-sq-vZH" secondAttribute="bottom" id="yrW-ni-u9f"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="Okh-YE-eWU"/>
+                    <connections>
+                        <outlet property="confirmButton" destination="blM-WO-JPy" id="p74-be-jmf"/>
+                        <outlet property="startTime" destination="aZi-yQ-hVW" id="5oa-Zq-Cs3"/>
+                        <outlet property="startingPoint" destination="JrF-a9-mYR" id="lAT-6B-Qlr"/>
+                        <outlet property="tableView" destination="NFL-LJ-XZu" id="h2k-dc-n5Y"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kVC-lk-OUk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2384.8000000000002" y="161.46926536731635"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="RKL-zi-JSc">
+            <objects>
+                <navigationController id="Qyj-xt-f8p" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="weF-U6-d5Q">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="DNQ-Fn-PXw" kind="relationship" relationship="rootViewController" id="QP1-8u-IDE"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="m9h-bm-bPc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="270" y="149"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="bar.png" width="608" height="75"/>
+        <image name="seattle.png" width="500" height="247"/>
+    </resources>
+</document>

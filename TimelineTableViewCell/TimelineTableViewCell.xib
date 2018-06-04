@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="mx5-YM-BCr" customClass="TimelineTableViewCell" customModule="TimelineTableViewCell" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="88"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="mx5-YM-BCr" id="HxZ-h8-hOq">
+                <rect key="frame" x="0.0" y="0.0" width="375" height="87.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="right" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W66-Ck-wDF">
+                        <rect key="frame" x="-1" y="77" width="47" height="0.0"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="47" id="wRF-2B-1fE"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" style="UICTFontTextStyleCaption2"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Od-hl-ENS">
+                        <rect key="frame" x="16" y="34" width="0.0" height="18"/>
+                        <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
+                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" image="seattle.png" translatesAutoresizingMaskIntoConstraints="NO" id="2Rz-dN-Xtc">
+                        <rect key="frame" x="16" y="21" width="59" height="44"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="44" id="VK0-TI-oZM"/>
+                            <constraint firstAttribute="width" constant="59" id="eXL-Gn-UBv"/>
+                        </constraints>
+                    </imageView>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ddJ-xR-hgV">
+                        <rect key="frame" x="72" y="21" width="181" height="44"/>
+                        <color key="backgroundColor" red="0.57045853140000002" green="0.57047235969999999" blue="0.57046490910000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="181" id="RGd-sR-cdu"/>
+                            <constraint firstAttribute="height" constant="44" id="yOT-iF-AB6"/>
+                        </constraints>
+                        <state key="normal" title="Space Needle">
+                            <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </state>
+                    </button>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MMv-OS-Ced">
+                        <rect key="frame" x="252" y="21" width="78" height="22"/>
+                        <color key="backgroundColor" red="0.57414853570000002" green="0.57416242360000003" blue="0.57415497299999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <state key="normal" title="Arrive at">
+                            <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </state>
+                    </button>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wop-V7-c1l">
+                        <rect key="frame" x="252" y="43" width="78" height="22"/>
+                        <color key="backgroundColor" red="0.57414853570000002" green="0.57416242360000003" blue="0.57415497299999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <state key="normal" title="10:30 a.m.">
+                            <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </state>
+                    </button>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v4d-Fk-Uaw">
+                        <rect key="frame" x="337" y="27" width="28" height="31"/>
+                        <state key="normal" backgroundImage="icons8-menu-50.png"/>
+                    </button>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="ddJ-xR-hgV" firstAttribute="centerY" secondItem="HxZ-h8-hOq" secondAttribute="centerY" id="00f-5n-wEE"/>
+                    <constraint firstItem="wop-V7-c1l" firstAttribute="bottom" secondItem="ddJ-xR-hgV" secondAttribute="bottom" id="0OX-a6-axZ"/>
+                    <constraint firstItem="ddJ-xR-hgV" firstAttribute="leading" secondItem="2Rz-dN-Xtc" secondAttribute="trailing" constant="-3" id="0tT-VN-CaV"/>
+                    <constraint firstItem="ddJ-xR-hgV" firstAttribute="firstBaseline" secondItem="4Od-hl-ENS" secondAttribute="baseline" id="4AC-xY-WUp"/>
+                    <constraint firstAttribute="trailing" secondItem="wop-V7-c1l" secondAttribute="trailing" constant="45" id="5B5-Mk-xDb"/>
+                    <constraint firstItem="ddJ-xR-hgV" firstAttribute="baseline" secondItem="4Od-hl-ENS" secondAttribute="firstBaseline" id="6DA-rx-7vE"/>
+                    <constraint firstItem="MMv-OS-Ced" firstAttribute="leading" secondItem="ddJ-xR-hgV" secondAttribute="trailing" constant="-1" id="FcD-8y-miO"/>
+                    <constraint firstItem="2Rz-dN-Xtc" firstAttribute="centerY" secondItem="4Od-hl-ENS" secondAttribute="centerY" id="GJE-L6-5Qt"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="MMv-OS-Ced" secondAttribute="bottom" constant="34" id="GWG-wY-PC0"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="ddJ-xR-hgV" secondAttribute="trailing" constant="106" id="LvF-Oh-Fbr"/>
+                    <constraint firstItem="v4d-Fk-Uaw" firstAttribute="leading" secondItem="wop-V7-c1l" secondAttribute="trailing" constant="7" id="PnA-VR-1bc"/>
+                    <constraint firstAttribute="bottom" secondItem="v4d-Fk-Uaw" secondAttribute="bottom" constant="29.5" id="Q41-15-d6o"/>
+                    <constraint firstItem="ddJ-xR-hgV" firstAttribute="top" secondItem="2Rz-dN-Xtc" secondAttribute="top" id="Q5h-3I-KaX"/>
+                    <constraint firstItem="2Rz-dN-Xtc" firstAttribute="height" secondItem="ddJ-xR-hgV" secondAttribute="height" id="QS4-n1-y8n"/>
+                    <constraint firstItem="ddJ-xR-hgV" firstAttribute="baseline" secondItem="4Od-hl-ENS" secondAttribute="baseline" id="R0O-sJ-3uh"/>
+                    <constraint firstItem="MMv-OS-Ced" firstAttribute="top" secondItem="ddJ-xR-hgV" secondAttribute="top" id="SKQ-gk-mTb"/>
+                    <constraint firstItem="wop-V7-c1l" firstAttribute="top" secondItem="MMv-OS-Ced" secondAttribute="bottom" id="XbO-EM-zFU"/>
+                    <constraint firstItem="MMv-OS-Ced" firstAttribute="trailing" secondItem="wop-V7-c1l" secondAttribute="trailing" id="dMu-BG-lMO"/>
+                    <constraint firstItem="4Od-hl-ENS" firstAttribute="leading" secondItem="HxZ-h8-hOq" secondAttribute="leadingMargin" id="eEL-7D-WMc"/>
+                    <constraint firstItem="2Rz-dN-Xtc" firstAttribute="leading" secondItem="4Od-hl-ENS" secondAttribute="leading" id="eQZ-cU-c0n"/>
+                    <constraint firstItem="ddJ-xR-hgV" firstAttribute="top" secondItem="HxZ-h8-hOq" secondAttribute="topMargin" constant="10" id="gce-lP-brw"/>
+                    <constraint firstItem="W66-Ck-wDF" firstAttribute="leading" secondItem="HxZ-h8-hOq" secondAttribute="leading" constant="-1" id="ngi-V5-gD4"/>
+                    <constraint firstItem="wop-V7-c1l" firstAttribute="leading" secondItem="ddJ-xR-hgV" secondAttribute="trailing" constant="-1" id="qau-h7-fdI"/>
+                    <constraint firstItem="W66-Ck-wDF" firstAttribute="bottom" secondItem="HxZ-h8-hOq" secondAttribute="bottomMargin" id="vmf-hH-xlC"/>
+                    <constraint firstItem="v4d-Fk-Uaw" firstAttribute="top" secondItem="HxZ-h8-hOq" secondAttribute="top" constant="27" id="xF6-6x-hwP"/>
+                    <constraint firstAttribute="trailing" secondItem="v4d-Fk-Uaw" secondAttribute="trailing" constant="10" id="xsb-yv-5d2"/>
+                </constraints>
+            </tableViewCellContentView>
+            <accessibility key="accessibilityConfiguration" identifier="TimelineTableViewCell"/>
+            <connections>
+                <outlet property="lineInfoLabel" destination="W66-Ck-wDF" id="WZr-av-HnT"/>
+                <outlet property="placeArrivalTime" destination="wop-V7-c1l" id="hKc-Y5-Vwy"/>
+                <outlet property="placeButton" destination="ddJ-xR-hgV" id="pl8-yx-djM"/>
+                <outlet property="placeImage" destination="2Rz-dN-Xtc" id="LPT-gm-EXr"/>
+                <outlet property="titleLabel" destination="4Od-hl-ENS" id="LQv-Oo-CCv"/>
+            </connections>
+            <point key="canvasLocation" x="29.5" y="99"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="icons8-menu-50.png" width="50" height="50"/>
+        <image name="seattle.png" width="500" height="247"/>
+    </resources>
+</document>
