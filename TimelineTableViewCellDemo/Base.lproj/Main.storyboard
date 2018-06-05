@@ -28,11 +28,11 @@
                         <viewControllerLayoutGuide type="bottom" id="6OK-1C-hYZ"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="ajT-RT-u4L">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="800"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="NFL-LJ-XZu">
-                                <rect key="frame" x="0.0" y="294" width="375" height="312"/>
+                                <rect key="frame" x="0.0" y="294" width="375" height="506"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="sectionIndexBackgroundColor" red="0.90487922799999998" green="0.91383842829999995" blue="0.91383842829999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
@@ -40,14 +40,8 @@
                                     <outlet property="delegate" destination="ajT-RT-u4L" id="whN-LB-oGA"/>
                                 </connections>
                             </tableView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bar.png" translatesAutoresizingMaskIntoConstraints="NO" id="ogX-vc-IbZ">
-                                <rect key="frame" x="0.0" y="239" width="375" height="54"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="seattle.png" translatesAutoresizingMaskIntoConstraints="NO" id="Ftv-sq-vZH">
-                                <rect key="frame" x="0.0" y="64" width="375" height="175"/>
-                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="blM-WO-JPy">
-                                <rect key="frame" x="98" y="614" width="179" height="45"/>
+                                <rect key="frame" x="98" y="747" width="179" height="45"/>
                                 <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Confirm Itinerary">
                                     <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -58,6 +52,12 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bar.png" translatesAutoresizingMaskIntoConstraints="NO" id="ogX-vc-IbZ">
+                                <rect key="frame" x="0.0" y="239" width="375" height="54"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="seattle.png" translatesAutoresizingMaskIntoConstraints="NO" id="Ftv-sq-vZH">
+                                <rect key="frame" x="0.0" y="64" width="375" height="175"/>
+                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Start Time: 10:30 a.m." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aZi-yQ-hVW">
                                 <rect key="frame" x="19" y="250" width="169" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -76,12 +76,12 @@
                         <constraints>
                             <constraint firstItem="6OK-1C-hYZ" firstAttribute="top" secondItem="blM-WO-JPy" secondAttribute="bottom" constant="8" id="3a6-wR-HRm"/>
                             <constraint firstAttribute="trailing" secondItem="NFL-LJ-XZu" secondAttribute="trailing" id="554-r1-YM1"/>
-                            <constraint firstItem="6OK-1C-hYZ" firstAttribute="top" secondItem="NFL-LJ-XZu" secondAttribute="bottom" constant="61" id="Da3-F3-JmR"/>
+                            <constraint firstItem="6OK-1C-hYZ" firstAttribute="top" secondItem="NFL-LJ-XZu" secondAttribute="bottom" id="Da3-F3-JmR"/>
                             <constraint firstAttribute="trailing" secondItem="blM-WO-JPy" secondAttribute="trailing" constant="98" id="HYP-tc-JlX"/>
                             <constraint firstItem="NFL-LJ-XZu" firstAttribute="leading" secondItem="ajT-RT-u4L" secondAttribute="leading" id="LrV-MY-7oV"/>
                             <constraint firstItem="blM-WO-JPy" firstAttribute="leading" secondItem="ajT-RT-u4L" secondAttribute="leading" constant="98" id="PSC-ga-htA"/>
                             <constraint firstItem="ogX-vc-IbZ" firstAttribute="leading" secondItem="aZi-yQ-hVW" secondAttribute="trailing" constant="-188" id="XA6-zc-o8U"/>
-                            <constraint firstItem="blM-WO-JPy" firstAttribute="top" secondItem="NFL-LJ-XZu" secondAttribute="bottom" constant="8" id="YQ1-Vf-G8a"/>
+                            <constraint firstItem="blM-WO-JPy" firstAttribute="top" secondItem="NFL-LJ-XZu" secondAttribute="bottom" constant="-53" id="YQ1-Vf-G8a"/>
                             <constraint firstItem="NFL-LJ-XZu" firstAttribute="top" secondItem="ogX-vc-IbZ" secondAttribute="bottom" constant="1" id="YmO-Gg-IXg"/>
                             <constraint firstItem="Ftv-sq-vZH" firstAttribute="top" secondItem="2B8-T2-4U4" secondAttribute="bottom" id="cGc-yL-c9t"/>
                             <constraint firstItem="aZi-yQ-hVW" firstAttribute="top" secondItem="ogX-vc-IbZ" secondAttribute="bottom" constant="-43" id="gPj-nZ-f02"/>
@@ -96,8 +96,10 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Okh-YE-eWU"/>
+                    <size key="freeformSize" width="375" height="800"/>
                     <connections>
                         <outlet property="confirmButton" destination="blM-WO-JPy" id="p74-be-jmf"/>
+                        <outlet property="myView" destination="ajT-RT-u4L" id="skf-Yp-1TN"/>
                         <outlet property="startTime" destination="aZi-yQ-hVW" id="5oa-Zq-Cs3"/>
                         <outlet property="startingPoint" destination="JrF-a9-mYR" id="lAT-6B-Qlr"/>
                         <outlet property="tableView" destination="NFL-LJ-XZu" id="h2k-dc-n5Y"/>

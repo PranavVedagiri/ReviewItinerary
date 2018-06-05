@@ -12,6 +12,7 @@ import TimelineTableViewCell
 class TimelineTableViewController: UIViewController, UITableViewDelegate, UITableViewDataSource{
     
     // TimelinePoint, Timeline back color, title, description, lineInfo, thumbnail, illustration
+    @IBOutlet var myView: UIView!
     @IBOutlet var tableView: UITableView?
     
     @IBOutlet var startTime: UILabel!
@@ -35,6 +36,7 @@ class TimelineTableViewController: UIViewController, UITableViewDelegate, UITabl
         tableView?.delegate = self
         tableView?.dataSource = self
         confirmButton.isHidden = true
+        tableView?.isEditing = true
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -44,8 +46,12 @@ class TimelineTableViewController: UIViewController, UITableViewDelegate, UITabl
         
         let timelineTableViewCellNib = UINib(nibName: "TimelineTableViewCell", bundle: Bundle(for: TimelineTableViewCell.self))
         tableView?.register(timelineTableViewCellNib, forCellReuseIdentifier: "TimelineTableViewCell")
-        let longpress = UILongPressGestureRecognizer(target: self, action: #selector(longPressGestureRecognized))
-        tableView?.addGestureRecognizer(longpress)
+        //let longpress = UILongPressGestureRecognizer(target: self, action: #selector(longPressGestureRecognized))
+       // tableView?.addGestureRecognizer(longpress)
+    }
+    
+    @IBAction func doEdit(sender: AnyObject) {
+        tableView?.setEditing(true, animated: true)
     }
     
     
@@ -82,7 +88,7 @@ class TimelineTableViewController: UIViewController, UITableViewDelegate, UITabl
             return cell
         }
         
-        let (timelinePoint, timelineBackColor, title, startTime, lineInfo, thumbnail, illustration) = sectionData[indexPath.row]
+        var (timelinePoint, timelineBackColor, title, startTime, lineInfo, thumbnail, illustration) = sectionData[indexPath.row]
         var timelineFrontColor = UIColor.clear
         if (indexPath.row > 0) {
             timelineFrontColor = sectionData[indexPath.row - 1].1
@@ -121,102 +127,17 @@ class TimelineTableViewController: UIViewController, UITableViewDelegate, UITabl
         
         print(sectionData[indexPath.row])
     }
-
     
-    @objc func longPressGestureRecognized(gestureRecognizer: UIGestureRecognizer) {
-        let longPress = gestureRecognizer as! UILongPressGestureRecognizer
-        let state = longPress.state
-        var locationInView = longPress.location(in: tableView)
-        var indexPath = tableView?.indexPathForRow(at: locationInView)
-        
-        struct My {
-            static var cellSnapshot : UIView? = nil
-        }
-        struct Path {
-            static var initialIndexPath : NSIndexPath? = nil
-        }
-        switch state {
-        case UIGestureRecognizerState.began:
-            if indexPath != nil {
-                Path.initialIndexPath = indexPath as! NSIndexPath
-                let cell = tableView?.cellForRow(at: indexPath!) as UITableViewCell!
-                My.cellSnapshot  = snapshopOfCell(inputView: cell!)
-                var center = cell?.center
-                My.cellSnapshot!.center = center!
-                My.cellSnapshot!.alpha = 0.0
-                tableView?.addSubview(My.cellSnapshot!)
-                
-                UIView.animate(withDuration: 0.25, animations: { () -> Void in
-                    center?.y = locationInView.y
-                    My.cellSnapshot!.center = center!
-                    My.cellSnapshot!.transform = CGAffineTransform(scaleX: 1.05, y: 1.05)
-                    My.cellSnapshot!.alpha = 0.98
-                    cell?.alpha = 0.0
-                    
-                }, completion: { (finished) -> Void in
-                    if finished {
-                        cell?.isHidden = true
-                    }
-                })
-            }
-        case UIGestureRecognizerState.changed:
-            guard var sectionData = data[(indexPath?.section)!] else {
-                return
-            }
-            confirmButton.isHidden = false
-
-            var center = My.cellSnapshot!.center
-            center.y = locationInView.y
-            My.cellSnapshot!.center = center
-            if ((indexPath != nil) && (indexPath as NSIndexPath? != Path.initialIndexPath)) {
-                sectionData.swapAt(indexPath!.row, Path.initialIndexPath!.row)
-                tableView?.moveRow(at: Path.initialIndexPath! as IndexPath, to: indexPath!)
-                Path.initialIndexPath = indexPath as NSIndexPath?
-            }
-            
-        default:
-            let cell = tableView?.cellForRow(at: Path.initialIndexPath! as IndexPath) as UITableViewCell?
-            cell?.isHidden = false
-            cell?.alpha = 0.0
-            UIView.animate(withDuration: 0.25, animations: { () -> Void in
-                My.cellSnapshot!.center = (cell?.center)!
-                My.cellSnapshot!.transform = CGAffineTransform.identity
-                My.cellSnapshot!.alpha = 0.0
-                cell?.alpha = 1.0
-            }, completion: { (finished) -> Void in
-                if finished {
-                    Path.initialIndexPath = nil
-                    My.cellSnapshot!.removeFromSuperview()
-                    My.cellSnapshot = nil
-                }
-            })
-        }
-    }
-    
-    func snapshopOfCell(inputView: UIView) -> UIView {
-        UIGraphicsBeginImageContextWithOptions(inputView.bounds.size, false, 0.0)
-        inputView.layer.render(in: UIGraphicsGetCurrentContext()!)
-        let image = UIGraphicsGetImageFromCurrentImageContext() as! UIImage
-        UIGraphicsEndImageContext()
-        let cellSnapshot : UIView = UIImageView(image: image)
-        cellSnapshot.layer.masksToBounds = false
-        cellSnapshot.layer.cornerRadius = 0.0
-        cellSnapshot.layer.shadowOffset = CGSize(width: -5.0, height: 0.0)
-        cellSnapshot.layer.shadowRadius = 5.0
-        cellSnapshot.layer.shadowOpacity = 0.4
-        return cellSnapshot
-    }
-    /*
     // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         // Return false if you do not want the specified item to be editable.
         return true
     }
-    */
+    
 
-    /*
+    
     // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             // Delete the row from the data source
             tableView.deleteRows(at: [indexPath], with: .fade)
@@ -224,22 +145,22 @@ class TimelineTableViewController: UIViewController, UITableViewDelegate, UITabl
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
         }    
     }
-    */
+    
 
-    /*
+    
     // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
+    func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
+    
     }
-    */
+    
 
-    /*
+    
     // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
+    func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
         // Return false if you do not want the item to be re-orderable.
         return true
     }
-    */
+    
 
     /*
     // MARK: - Navigation

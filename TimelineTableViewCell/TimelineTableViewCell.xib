@@ -36,15 +36,15 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" image="seattle.png" translatesAutoresizingMaskIntoConstraints="NO" id="2Rz-dN-Xtc">
-                        <rect key="frame" x="16" y="21" width="59" height="44"/>
+                        <rect key="frame" x="40" y="21" width="59" height="44"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="44" id="VK0-TI-oZM"/>
                             <constraint firstAttribute="width" constant="59" id="eXL-Gn-UBv"/>
                         </constraints>
                     </imageView>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ddJ-xR-hgV">
-                        <rect key="frame" x="72" y="21" width="181" height="44"/>
-                        <color key="backgroundColor" red="0.57045853140000002" green="0.57047235969999999" blue="0.57046490910000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <rect key="frame" x="96" y="21" width="181" height="44"/>
+                        <color key="backgroundColor" red="0.3411764705882353" green="0.3411764705882353" blue="0.3411764705882353" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="181" id="RGd-sR-cdu"/>
                             <constraint firstAttribute="height" constant="44" id="yOT-iF-AB6"/>
@@ -54,24 +54,20 @@
                         </state>
                     </button>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MMv-OS-Ced">
-                        <rect key="frame" x="252" y="21" width="78" height="22"/>
-                        <color key="backgroundColor" red="0.57414853570000002" green="0.57416242360000003" blue="0.57415497299999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <rect key="frame" x="276" y="21" width="93" height="22"/>
+                        <color key="backgroundColor" red="0.3411764706" green="0.3411764706" blue="0.3411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                         <state key="normal" title="Arrive at">
                             <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         </state>
                     </button>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wop-V7-c1l">
-                        <rect key="frame" x="252" y="43" width="78" height="22"/>
-                        <color key="backgroundColor" red="0.57414853570000002" green="0.57416242360000003" blue="0.57415497299999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <rect key="frame" x="276" y="43" width="93" height="22"/>
+                        <color key="backgroundColor" red="0.3411764706" green="0.3411764706" blue="0.3411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                         <state key="normal" title="10:30 a.m.">
                             <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         </state>
-                    </button>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v4d-Fk-Uaw">
-                        <rect key="frame" x="337" y="27" width="28" height="31"/>
-                        <state key="normal" backgroundImage="icons8-menu-50.png"/>
                     </button>
                 </subviews>
                 <constraints>
@@ -79,14 +75,12 @@
                     <constraint firstItem="wop-V7-c1l" firstAttribute="bottom" secondItem="ddJ-xR-hgV" secondAttribute="bottom" id="0OX-a6-axZ"/>
                     <constraint firstItem="ddJ-xR-hgV" firstAttribute="leading" secondItem="2Rz-dN-Xtc" secondAttribute="trailing" constant="-3" id="0tT-VN-CaV"/>
                     <constraint firstItem="ddJ-xR-hgV" firstAttribute="firstBaseline" secondItem="4Od-hl-ENS" secondAttribute="baseline" id="4AC-xY-WUp"/>
-                    <constraint firstAttribute="trailing" secondItem="wop-V7-c1l" secondAttribute="trailing" constant="45" id="5B5-Mk-xDb"/>
+                    <constraint firstAttribute="trailing" secondItem="wop-V7-c1l" secondAttribute="trailing" constant="6" id="5B5-Mk-xDb"/>
                     <constraint firstItem="ddJ-xR-hgV" firstAttribute="baseline" secondItem="4Od-hl-ENS" secondAttribute="firstBaseline" id="6DA-rx-7vE"/>
                     <constraint firstItem="MMv-OS-Ced" firstAttribute="leading" secondItem="ddJ-xR-hgV" secondAttribute="trailing" constant="-1" id="FcD-8y-miO"/>
                     <constraint firstItem="2Rz-dN-Xtc" firstAttribute="centerY" secondItem="4Od-hl-ENS" secondAttribute="centerY" id="GJE-L6-5Qt"/>
                     <constraint firstAttribute="bottomMargin" secondItem="MMv-OS-Ced" secondAttribute="bottom" constant="34" id="GWG-wY-PC0"/>
-                    <constraint firstAttribute="trailingMargin" secondItem="ddJ-xR-hgV" secondAttribute="trailing" constant="106" id="LvF-Oh-Fbr"/>
-                    <constraint firstItem="v4d-Fk-Uaw" firstAttribute="leading" secondItem="wop-V7-c1l" secondAttribute="trailing" constant="7" id="PnA-VR-1bc"/>
-                    <constraint firstAttribute="bottom" secondItem="v4d-Fk-Uaw" secondAttribute="bottom" constant="29.5" id="Q41-15-d6o"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="ddJ-xR-hgV" secondAttribute="trailing" constant="82" id="LvF-Oh-Fbr"/>
                     <constraint firstItem="ddJ-xR-hgV" firstAttribute="top" secondItem="2Rz-dN-Xtc" secondAttribute="top" id="Q5h-3I-KaX"/>
                     <constraint firstItem="2Rz-dN-Xtc" firstAttribute="height" secondItem="ddJ-xR-hgV" secondAttribute="height" id="QS4-n1-y8n"/>
                     <constraint firstItem="ddJ-xR-hgV" firstAttribute="baseline" secondItem="4Od-hl-ENS" secondAttribute="baseline" id="R0O-sJ-3uh"/>
@@ -94,13 +88,11 @@
                     <constraint firstItem="wop-V7-c1l" firstAttribute="top" secondItem="MMv-OS-Ced" secondAttribute="bottom" id="XbO-EM-zFU"/>
                     <constraint firstItem="MMv-OS-Ced" firstAttribute="trailing" secondItem="wop-V7-c1l" secondAttribute="trailing" id="dMu-BG-lMO"/>
                     <constraint firstItem="4Od-hl-ENS" firstAttribute="leading" secondItem="HxZ-h8-hOq" secondAttribute="leadingMargin" id="eEL-7D-WMc"/>
-                    <constraint firstItem="2Rz-dN-Xtc" firstAttribute="leading" secondItem="4Od-hl-ENS" secondAttribute="leading" id="eQZ-cU-c0n"/>
+                    <constraint firstItem="2Rz-dN-Xtc" firstAttribute="leading" secondItem="4Od-hl-ENS" secondAttribute="leading" constant="24" id="eQZ-cU-c0n"/>
                     <constraint firstItem="ddJ-xR-hgV" firstAttribute="top" secondItem="HxZ-h8-hOq" secondAttribute="topMargin" constant="10" id="gce-lP-brw"/>
                     <constraint firstItem="W66-Ck-wDF" firstAttribute="leading" secondItem="HxZ-h8-hOq" secondAttribute="leading" constant="-1" id="ngi-V5-gD4"/>
                     <constraint firstItem="wop-V7-c1l" firstAttribute="leading" secondItem="ddJ-xR-hgV" secondAttribute="trailing" constant="-1" id="qau-h7-fdI"/>
                     <constraint firstItem="W66-Ck-wDF" firstAttribute="bottom" secondItem="HxZ-h8-hOq" secondAttribute="bottomMargin" id="vmf-hH-xlC"/>
-                    <constraint firstItem="v4d-Fk-Uaw" firstAttribute="top" secondItem="HxZ-h8-hOq" secondAttribute="top" constant="27" id="xF6-6x-hwP"/>
-                    <constraint firstAttribute="trailing" secondItem="v4d-Fk-Uaw" secondAttribute="trailing" constant="10" id="xsb-yv-5d2"/>
                 </constraints>
             </tableViewCellContentView>
             <accessibility key="accessibilityConfiguration" identifier="TimelineTableViewCell"/>
@@ -115,7 +107,6 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="icons8-menu-50.png" width="50" height="50"/>
         <image name="seattle.png" width="500" height="247"/>
     </resources>
 </document>
