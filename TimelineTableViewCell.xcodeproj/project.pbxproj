@@ -19,6 +19,7 @@
 		AAD278181E9BECBE00ED95FE /* TimelineTableViewCell.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = AAC049891DB88F0A003FEC67 /* TimelineTableViewCell.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		AAE17F0A1DBA130A00A1C450 /* TimelineTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AAE17F091DBA130A00A1C450 /* TimelineTableViewCell.xib */; };
 		AAE17F0C1DBA66D000A1C450 /* Timeline.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE17F0B1DBA66D000A1C450 /* Timeline.swift */; };
+		FA0E1CD720C9EC98000C25ED /* ItineraryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0E1CD520C9EC70000C25ED /* ItineraryView.swift */; };
 		FAF8892120C3B4840018CED0 /* seattle.png in Resources */ = {isa = PBXBuildFile; fileRef = FAF8892020C3B4830018CED0 /* seattle.png */; };
 		FAF8892320C3C9980018CED0 /* bar.png in Resources */ = {isa = PBXBuildFile; fileRef = FAF8892220C3C9980018CED0 /* bar.png */; };
 		FAF8892520C3D7A40018CED0 /* icons8-menu-50.png in Resources */ = {isa = PBXBuildFile; fileRef = FAF8892420C3D7A40018CED0 /* icons8-menu-50.png */; };
@@ -52,6 +53,7 @@
 		AAC049AE1DB89416003FEC67 /* TimelineTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimelineTableViewController.swift; sourceTree = "<group>"; };
 		AAE17F091DBA130A00A1C450 /* TimelineTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TimelineTableViewCell.xib; sourceTree = "<group>"; };
 		AAE17F0B1DBA66D000A1C450 /* Timeline.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Timeline.swift; sourceTree = "<group>"; };
+		FA0E1CD520C9EC70000C25ED /* ItineraryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ItineraryView.swift; path = ../TimelineTableViewCell/ItineraryView.swift; sourceTree = "<group>"; };
 		FAF8892020C3B4830018CED0 /* seattle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = seattle.png; sourceTree = "<group>"; };
 		FAF8892220C3C9980018CED0 /* bar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bar.png; sourceTree = "<group>"; };
 		FAF8892420C3D7A40018CED0 /* icons8-menu-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icons8-menu-50.png"; sourceTree = "<group>"; };
@@ -111,6 +113,7 @@
 		AAC049991DB88F18003FEC67 /* TimelineTableViewCellDemo */ = {
 			isa = PBXGroup;
 			children = (
+				FA0E1CD520C9EC70000C25ED /* ItineraryView.swift */,
 				AAC0499A1DB88F18003FEC67 /* AppDelegate.swift */,
 				AAC049AE1DB89416003FEC67 /* TimelineTableViewController.swift */,
 				AAC0499E1DB88F18003FEC67 /* Main.storyboard */,
@@ -244,6 +247,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA0E1CD720C9EC98000C25ED /* ItineraryView.swift in Sources */,
 				AAE17F0C1DBA66D000A1C450 /* Timeline.swift in Sources */,
 				AAC049AB1DB88F38003FEC67 /* TimelineTableViewCell.swift in Sources */,
 				AAC049AD1DB89002003FEC67 /* TimelinePoint.swift in Sources */,

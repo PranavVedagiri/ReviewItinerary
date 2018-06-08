@@ -1,26 +1,17 @@
 //
-//  TimelineTableViewController.swift
-//  TimelineTableViewCell
+//  ItineraryView.swift
+//  TimelineTableViewCellDemo
 //
-//  Created by Zheng-Xiang Ke on 2016/10/20.
-//  Copyright © 2016年 Zheng-Xiang Ke. All rights reserved.
+//  Created by Pranav Vedagiri on 6/7/18.
+//  Copyright © 2018 Zheng-Xiang Ke. All rights reserved.
 //
 
-import UIKit
-import TimelineTableViewCell
+import Foundation
 
-class TimelineTableViewController: UIViewController, UITableViewDelegate, UITableViewDataSource{
+class ItineraryView: UIViewController, UITableViewDelegate, UITableViewDataSource{
     
-    // TimelinePoint, Timeline back color, title, description, lineInfo, thumbnail, illustration
-    @IBOutlet var myView: UIView!
-    @IBOutlet var tableView: UITableView?
     
-    @IBOutlet var startTime: UILabel!
-    
-    @IBOutlet var startingPoint: UILabel!
-    
-    @IBOutlet var confirmButton: UIButton!
-    
+    @IBOutlet var tableView: UITableView!
     var data:[Int: [(TimelinePoint, UIColor, String, String, String?, String?, String?)]] = [0:[
         (TimelinePoint(), UIColor.black, "Space Needle", "10:30 a.m.", nil, nil, "seattle"),
         (TimelinePoint(), UIColor.black, "Pike Place", "11:30 a.m.", nil, nil, "Sun"),
@@ -31,23 +22,22 @@ class TimelineTableViewController: UIViewController, UITableViewDelegate, UITabl
             (TimelinePoint(), UIColor.black, "Mount Rainier", "3:30 p.m.", nil, nil, "Apple"),
             (TimelinePoint(), UIColor.clear, "Chihuly Garden and Glass", "4:30 p.m.", nil, nil, "seattle"),
         ]]
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView?.delegate = self
         tableView?.dataSource = self
-        tableView?.isEditing = true
-
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
-
+        
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
         
         let timelineTableViewCellNib = UINib(nibName: "TimelineTableViewCell", bundle: Bundle(for: TimelineTableViewCell.self))
         tableView?.register(timelineTableViewCellNib, forCellReuseIdentifier: "TimelineTableViewCell")
         //let longpress = UILongPressGestureRecognizer(target: self, action: #selector(longPressGestureRecognized))
-       // tableView?.addGestureRecognizer(longpress)
+        // tableView?.addGestureRecognizer(longpress)
     }
     
     @IBAction func doEdit(sender: AnyObject) {
@@ -55,19 +45,19 @@ class TimelineTableViewController: UIViewController, UITableViewDelegate, UITabl
     }
     
     
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    
     // MARK: - Table view data source
-
+    
     func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return data.count
     }
-
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
         guard let sectionData = data[section] else {
@@ -79,10 +69,10 @@ class TimelineTableViewController: UIViewController, UITableViewDelegate, UITabl
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return "Day " + String(describing: section + 1)
     }
-
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "TimelineTableViewCell", for: indexPath) as! TimelineTableViewCell
-
+        
         // Configure the cell...
         guard let sectionData = data[indexPath.section] else {
             return cell
@@ -103,7 +93,7 @@ class TimelineTableViewController: UIViewController, UITableViewDelegate, UITabl
         //cell.descriptionLabel.text = description
         cell.lineInfoLabel.text = lineInfo
         if let thumbnail = thumbnail {
-           // cell.thumbnailImageView.image = UIImage(named: thumbnail)
+            // cell.thumbnailImageView.image = UIImage(named: thumbnail)
         }
         else {
             //cell.thumbnailImageView.image = nil
@@ -116,11 +106,11 @@ class TimelineTableViewController: UIViewController, UITableViewDelegate, UITabl
             cell.placeImage.image = nil
             //cell.illustrationImageView.image = nil
         }
-   
+        
         return cell
     }
     
-   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         guard let sectionData = data[indexPath.section] else {
             return
         }
@@ -134,29 +124,28 @@ class TimelineTableViewController: UIViewController, UITableViewDelegate, UITabl
         return true
     }
     
-
+    
     
     // Override to support editing the table view.
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-
+        
         if editingStyle == .delete {
             // Delete the row from the data source
             
             tableView.deleteRows(at: [indexPath], with: .fade)
         } else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
+        }
     }
     
-
+    
     
     // Override to support rearranging the table view.
     func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-        confirmButton.setTitle("Recalculate", for: UIControlState.normal)
         
     }
     
-
+    
     
     // Override to support conditional rearranging of the table view.
     func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
@@ -164,15 +153,16 @@ class TimelineTableViewController: UIViewController, UITableViewDelegate, UITabl
         return true
     }
     
-
+    
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destinationViewController.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
 }
+
